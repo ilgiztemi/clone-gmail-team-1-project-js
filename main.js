@@ -11,7 +11,7 @@ const nextBtn = document.querySelector('#next');
 
 let pageNumber = 0;
 let limit = 15;
-document.createElement("li")
+document.createElement("li");
 
 function createMails(mails) {
   for (let mail of mails) { 
@@ -35,7 +35,7 @@ function createMails(mails) {
   const start = pageNumber * limit + 1; // 0, 15, 30
   const end = (pageNumber + 1) * limit; // 15, 30, 45
 
-  const partialMails = mails.slice(start, end); //[]
+  // const partialMails = mails.slice(start, end); //[]
 
   // pageInfoSpan.innerText = `${start}-${end} of ${mails.length}`;
 

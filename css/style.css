@@ -15,7 +15,7 @@ body {
     font-family: 'Google-font, sans-serif';
     font-size: 1.2rem;
     line-height: 1.6;
-    width: 1366px;
+    width: 100%;
     background-color: #fff;
     overflow-x: hidden;
 }
@@ -375,8 +375,8 @@ a {
 }
 .mail-list {
     color: #202124;
-    display: flex;
-    flex-flow: row nowrap;
+    /* display: flex; */
+    /* flex-flow: row nowrap; */
     justify-content: space-between;
     align-items: center;
     width: 100%;
