@@ -1,4 +1,4 @@
-export const primary = [
+const primary1 = [
     {
       tags: { isStarred: false, isTrash: false, isSpam: false },
       senderName: 'Seytech Co',
@@ -1167,3 +1167,7 @@ export const primary = [
       ],
     },
   ];
+export const primary = primary1.map((mail, index)  => { 
+  return {
+     id: index + 1, ...mail};
+    });

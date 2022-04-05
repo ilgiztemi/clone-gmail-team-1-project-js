@@ -12,7 +12,8 @@
     src: url(../assets/Roboto-Regular.ttf);
 }
 body {
-    font-family: 'Google-font, sans-serif';
+    font-family:
+"Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     font-size: 1.2rem;
     line-height: 1.6;
     width: 100%;
@@ -24,7 +25,6 @@ header.global-nav {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     height: 66px;
     padding: 2px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -38,7 +38,7 @@ header.global-nav {
     flex: 0 0 15%;
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 5px;
     padding: 0.6rem 1rem;
     padding-right: 6rem;
 }
@@ -58,6 +58,7 @@ header.global-nav {
     margin: auto;
 }
 .search-global {
+    max-width: 700px;
     flex: 0 0 53%;
     display: flex;
     align-items: center;
@@ -82,13 +83,17 @@ header.global-nav {
 }
 .search-global svg:nth-child(3) {
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     padding: 5px;
 }
 .search-global svg:nth-child(3):hover {
     background-color: rgba(60, 64, 67, 0.08);
     cursor: pointer;
+}
+.global-nav-right-part {
+    margin-right: 10px;
+    padding-left: auto;
 }
 .global-nav-right-part svg {
     fill: #5f6368;
@@ -96,17 +101,17 @@ header.global-nav {
     background-color: #fff;
     border-radius: 50%;
     padding: 5px;
-    margin: 0 1rem;
-    width: 40px;
-    height: 40px;
+    margin: auto;
+    width: 35px;
+    height: 35px;
 }
 .global-nav-right-part svg:hover {
     background-color: #ebecec;
 }
 .global-nav-right-part img {
-    width: 32px;
-    height: 32px;
-    margin-left: 0.8rem;
+    width: 34px;
+    height: 34px;
+    margin: auto;
     border-radius: 50%;
 }
 .flex-container {
@@ -125,6 +130,8 @@ header.global-nav {
     font-size: 0.889rem;
     letter-spacing: 0.2px;
     background-color: #fff;
+    margin-right: 20px;
+
 }
 .left-nav a {
     display: block;
@@ -139,7 +146,7 @@ a {
 }
 .btn a {
     display: flex;
-    width: 57%;
+    width: 145px;
     flex-flow: row nowrap;
     justify-content: center;
     text-align: center;
@@ -152,10 +159,9 @@ a {
     font-weight: 500;
     height: 48px;
     min-width: 56px;
-    align-items: center;
 }
 .left-nav .btn a:hover {
-    background-color: fafafb;
+    background-color: #fafafb;
     box-shadow: 0px 1px 3px 0 rgba(60,64,67,0.3), 0px 4px 8px 3px rgba(60,64,67,0.15);
 }
 .compose img {
@@ -166,6 +172,9 @@ a {
 }
 .btn p {
     margin-top: 4px;
+}
+.left-nav {
+    max-width: 250px;
 }
 .left-nav .nav-list {
     height: 40%;
@@ -213,7 +222,9 @@ a {
     border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: inset 0px 1px 0px rgba(100, 121, 143, 0.122);
-    padding: 0.5rem 0 0.5rem 1.5rem;
+}
+.left-nav .meet h2 {
+padding-left: 25px;
 }
 .left-nav .meet h2, .left-nav .hangouts h2 {
     color: #3d3d3d;
@@ -221,13 +232,25 @@ a {
     font-weight: 600;
     padding-bottom: 0.7rem;
 }
+.left-nav .meet a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0px 25px 25px 0px;
+}
 .left-nav .meet a {
     color: #555;
     font-size: 14px;
     padding-bottom: 7px;
+    display: flex;
+    padding: 3px;
+    padding-left: 1.6rem;
+    width: 100%;
 }
 .left-nav .hangouts {
-    padding: 0.5rem 0 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    padding-left: 1.6rem;
+    width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .hangouts img {
@@ -240,13 +263,15 @@ a {
     align-items: center;
     justify-content: flex-start;
 }
+.hangouts .user-opt {
+    margin: auto;
+}
 .hangouts a {
-    margin-left: 37%;
+    margin-left: auto;
 }
 .main-content {
     flex: 0 0 77%;
     width: 100%;
-    max-width: 1100px;
     height: 100%;
 }
 .right-nav {
@@ -313,7 +338,7 @@ a {
 .mail-box {
     display: flex;
     flex-flow: column nowrap;
-    width: 94%;
+    width: 100%;
     align-items: flex-start;
     justify-content: flex-start;
     background-color: #fff;
@@ -375,8 +400,8 @@ a {
 }
 .mail-list {
     color: #202124;
-    /* display: flex; */
-    /* flex-flow: row nowrap; */
+    display: flex;
+    flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -441,7 +466,7 @@ a {
     display: flex;
     display: block;
     flex-basis: 15%;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-self: center;
     font-size: 17px;
     padding-right: 1rem;
@@ -468,13 +493,12 @@ a {
     position: absolute;
     bottom: 0;
     height: 65px;
-    width: 60%;
 }
 .content-footer footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 100px;
+    gap: 80px;
     font-size: 0.8rem;
     width: 100%;
 }
@@ -490,4 +514,8 @@ a {
 .content-footer .right-footer {
     display: flex;
     flex-flow: column nowrap;
+}
+.mail-item {
+    display: flex;
+    flex-flow: row nowrap;
 }
