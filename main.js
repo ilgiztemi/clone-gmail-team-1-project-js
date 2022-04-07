@@ -73,13 +73,12 @@ function createMails(mails) {
         </div>
         <div class="time-date">8:45PM</div>  
         </li>`;
-      list.push(eachMail);
+      mailList.innerHTML += eachMail;
     }
-    mailList.innerHTML = list;
   }
   function addList (mail) {
       for (let i of mail) {
-          mailList.innerHTML += mail[i];
+          list += mail[i];
       }
   };
   addList(list);
