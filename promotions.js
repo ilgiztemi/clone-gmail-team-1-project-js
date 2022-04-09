@@ -1,9 +1,9 @@
-export const promotions = [
+export const promotions1 = [
     {
       tags: { isStarred: false, isTrash: false, isSpam: false },
       senderName: 'Seytech Co',
       senderEmail: 'support@seytech.com',
-      messageTitle: 'Enrollment start date',
+      messageTitle: 'PROMOTIONS! Enrollment start date',
       isRead: false,
       date: new Date(),
       messages: [
@@ -1054,3 +1054,8 @@ export const promotions = [
       ],
     },
   ];
+  export const promotions = promotions1.map((promo, i)  => { 
+    return {
+       id: i + 1, ...promo};
+      });
+  
