@@ -129,7 +129,7 @@ header.global-nav {
 .left-nav {
     display: flex;
     flex-flow: column nowrap;
-    flex: 0 0 19%;
+    /* flex: 0 0 19%; */
     height: 560px;
     position: sticky;
     top: 60px;
@@ -138,7 +138,8 @@ header.global-nav {
     letter-spacing: 0.2px;
     background-color: #fff;
     margin-right: 20px;
-
+    max-width: 250px;
+    /* max-width: 50px; */
 }
 .left-nav a {
     display: block;
@@ -147,6 +148,9 @@ header.global-nav {
     margin: 1rem 0.5rem 0 0;
     padding-left: 0.5rem;
     height: 12%;
+}
+.nav-left-bottom {
+    overflow-x: hidden;
 }
 a {
     text-decoration: none;
@@ -180,9 +184,7 @@ a {
 .btn p {
     margin-top: 4px;
 }
-.left-nav {
-    max-width: 250px;
-}
+
 .left-nav .nav-list {
     height: 40%;
     overflow: hidden;
@@ -261,7 +263,7 @@ padding-left: 25px;
     display: flex;
     flex-direction: column;
     padding: 3px;
-    padding-left: 1.6rem;
+    padding-left: 17px;
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -557,6 +559,10 @@ padding-left: 25px;
 
 .active[data-tab-content] {
     display: block !important;
+}
+
+.active[data-tab-target] {
+    background-color: #7c7c7c;
 }
 
 .tab:hover {
