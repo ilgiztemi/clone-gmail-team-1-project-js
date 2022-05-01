@@ -18,6 +18,10 @@ const socialList = document.querySelector("#social-list");
 const searchInput = document.querySelector("#search-global");
 const searchMenu = document.querySelector(".search-menu");
 //right icons
+const globalNavRight = document.querySelector(".global-nav-right-part");
+
+const settingsIcon = document.querySelector(".settings-nav-right");
+const quickSettings = document.querySelector(".quick-settings");
 const supportIcon = document.querySelector(".support-nav-right");
 const supportDiv = document.getElementById("support"); //done
 const bars = document.querySelector(".fa-buromobelexperte");
@@ -40,6 +44,8 @@ const mailItem = document.querySelectorAll(".mail-item");
 //compose
 const compose = document.querySelector(".compose");
 const newMessage = document.getElementById("new-message");
+const closeMessage = document.querySelector(".fa-xmark");
+
 // main hamburger menu
 mainNav.addEventListener("click", function (event) {
   event.preventDefault();
@@ -60,33 +66,55 @@ mainNav.addEventListener("click", function (event) {
 });
 
 // compose a message
-compose.addEventListener("click", function () {
+compose.addEventListener("click", () => {
   if (clicked === true) {
     newMessage.style.display = "block";
     clicked = false;
-  } else if (clicked === false) {
+  } else {
     newMessage.style.display = "none";
     clicked = true;
   }
-  iconA.addEventListener("click", function () {
-    if ((newMessage.style.display = "block")) {
+  iconA.addEventListener("click", () => {
+    if (clicked === true) {
       fontEditor.style.display = "block";
       console.log("debug");
       //   clicked = false;
-    } else if ((newMessage.style.display = "none")) {
+    } else {
       fontEditor.style.display = "none";
       //   clicked = true;
     }
   });
+  closeMessage.addEventListener("click", function() {
+      newMessage.style.display = "none";
+  });
 });
 
 //right nav function
+// globalNavRight.addEventListener("click", function () {
+//   if (childNode.className === "support-nav-right" && clicked === true) {
+//     supportDiv.style.display = "block";
+//     clicked = false;
+//   } else {
+//     supportDiv.style.display = "none";
+//     clicked = true;
+//   }
+// });
 supportIcon.addEventListener("click", function () {
   if (clicked === true) {
     supportDiv.style.display = "block";
     clicked = false;
   } else {
     supportDiv.style.display = "none";
+    clicked = true;
+  }
+});
+
+settingsIcon.addEventListener("click", function () {
+  if (clicked === true) {
+    quickSettings.style.display = "block";
+    clicked = false;
+  } else {
+    quickSettings.style.display = "none";
     clicked = true;
   }
 });

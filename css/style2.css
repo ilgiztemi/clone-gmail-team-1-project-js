@@ -3,12 +3,12 @@
 #extensions,
 #account,
 #new-message {
+  display: none;
   background-color: white;
   position: absolute;
   padding: 5px;
   border-radius: 5px;
   box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.35);
-  display: none;
 }
 
 #support p:hover,
@@ -263,17 +263,16 @@ button {
 }
 
 .fa-clock {
-    margin: 0 10px;
-
+  margin: 0 10px;
 }
 
 /* new message pop up page */
 #new-message {
-  display: block;
+  display: none;
   width: 600px;
   height: 550px;
   right: 70px;
-  bottom: 0;  
+  bottom: 0;
   position: fixed;
   margin: 0;
   padding: 0;
@@ -283,10 +282,10 @@ button {
 .dark {
   background-color: #4e4e4e;
   border-top-left-radius: 7px;
-  border-top-right-radius: 7px;  
+  border-top-right-radius: 7px;
 }
 
-.dark span{
+.dark span {
   padding: 10px 15px;
   color: white;
 }
@@ -298,7 +297,7 @@ button {
 
 .dark a:hover {
   background-color: lightblue;
-  color:rgb(50, 105, 123)
+  color: rgb(50, 105, 123);
 }
 
 .flex {
@@ -306,7 +305,8 @@ button {
   justify-content: space-between;
 }
 
-.message-form input[type=text], .page textarea {
+.message-form input[type="text"],
+.page textarea {
   outline: none;
   width: 99%;
   border: none;
@@ -337,13 +337,16 @@ button {
 }
 
 .message-bottom button {
-  background-color: rgb(27,114,232);
+  background-color: rgb(27, 114, 232);
   color: white;
   border: none;
   padding: 10px 24px;
 }
 /* pop ups */
-.editor, .emojis, .edit-link, .attach {
+.editor,
+.emojis,
+.edit-link,
+.attach {
   display: none;
   position: absolute;
   bottom: 60px;
@@ -352,17 +355,83 @@ button {
 }
 
 .emojis {
-display: block;
+  display: none;
   left: 90px;
 }
 
-.edit-link, .attach {
+.edit-link,
+.attach {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.edit-link img, .attach img {
+.edit-link img,
+.attach img {
   border-radius: 7px;
   box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.35);
+}
+
+/* Settings pop up */
+.quick-settings {
+  display: none;
+  width: 450px;
+  padding: 5px 20px;
+  font-size: 14px;
+  line-height: 4;
+  height: 770px;
+  overflow-y: scroll;
+  /* margin-top: 75px; */
+}
+
+.quick-settings i {
+  float: right;
+  width: 45px;
+  font-size: 40px;
+  margin-right: 0 5px;
+  color: white;
+  background-color: black;
+}
+
+.quick-settings .fa-circle-question, .quick-settings .fa-xmark {
+  margin: 0;
+  width: 20px;
+  font-size: medium;
+  color: black;
+  background-color: white;
+}
+
+.quick-settings label {
+  padding: 10px;
+}
+.settings-header {
+  /* position: fixed;
+  top: 60px;
+  right: 60px; */
+  border-bottom: 1px solid grey;
+  background-color: white;
+  z-index: 1;
+  padding: 0 10px;
+  width: 280px;
+  line-height: 3;
+}
+
+.settings-header p {
+  font-size: 16px;
+}
+
+.settings-header a {
+  border: 1px rgb(195, 195, 195) solid;
+  border-radius: 4px;
+  padding: 7px;
+  color: rgb(27, 114, 232);
+}
+
+.settings-header a:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.float-right {
+  float: right;
+  color: rgb(27, 114, 232);
 }
