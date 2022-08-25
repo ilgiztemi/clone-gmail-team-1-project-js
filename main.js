@@ -1,6 +1,9 @@
 import { primary } from "./primary.js";
 import { promotions } from "./promotions.js";
 import { social } from "./social.js";
+const allMails = [...primary, ...social, ...promotions];
+const newEmails = allMails.map((item, index) => ({id: index + 1,...item}));
+console.log(newEmails)
 // main hamburger menu
 const mainNav = document.querySelector("#main-nav");
 const leftNav = document.querySelector(".left-nav");
@@ -42,14 +45,13 @@ const starred = document.querySelector("#starred");
 const select = document.querySelector(".select");
 const mailItem = document.querySelectorAll(".mail-item");
 //compose
-const compose = document.querySelector(".compose");
+const compose = document.querySelector(".btn");
 const newMessage = document.getElementById("new-message");
 const closeMessage = document.querySelector(".fa-xmark");
 
 // main hamburger menu
 mainNav.addEventListener("click", function (event) {
   event.preventDefault();
-  console.log("i'm working");
   if (clicked === true) {
     leftNav.style.maxWidth = "57px";
     leftNavBottom.style.maxWidth = "57px";
@@ -66,27 +68,33 @@ mainNav.addEventListener("click", function (event) {
 });
 
 // compose a message
-compose.addEventListener("click", () => {
-  if (clicked === true) {
+compose.addEventListener("click", (e) => {
+  if (clicked === false) {
     newMessage.style.display = "block";
-    clicked = false;
-  } else {
-    newMessage.style.display = "none";
     clicked = true;
   }
-  iconA.addEventListener("click", () => {
-    if (clicked === true) {
-      fontEditor.style.display = "block";
-      console.log("debug");
-      //   clicked = false;
-    } else {
-      fontEditor.style.display = "none";
-      //   clicked = true;
-    }
-  });
-  closeMessage.addEventListener("click", function() {
-      newMessage.style.display = "none";
-  });
+   else if (e.target.className === "fa-xmark") {
+    newMessage.style.display = "none";
+    clicked = false;
+  }
+   else if (e.target.className === "btn") {
+    newMessage.style.display = "none";
+    clicked = false;
+  }
+
+  // iconA.addEventListener("click", () => {
+  //   if (clicked === true) {
+  //     fontEditor.style.display = "block";
+  //     console.log("debug");
+  //     //   clicked = false;
+  //   } else {
+  //     fontEditor.style.display = "none";
+  //     //   clicked = true;
+  //   }
+  // });
+  // closeMessage.addEventListener("click", function() {
+  //     newMessage.style.display = "none";
+  // });
 });
 
 //right nav function
@@ -212,10 +220,30 @@ function renderEmails(partialMails) {
       </div>
       <div class="time-date">${mailTime}</div>  
       </li>`;
-    const premadeList = `<p><i class="fa-solid fa-clock"></i>${mail.senderName}</p>`
+    const premadeList = `<p><i id=${mail.senderName} class="fa-solid fa-clock"></i>${mail.senderName}</p>`
+    //  searchMenu.innerHTML += premadeList;
     mailList.innerHTML += eachMail;
-    searchMenu.innerHTML += premadeList;
-    // console.log(mailList, "mailList") 
+   
+      // console.log(premadeList) 
+    // let premadeListArray = []
+    // premadeListArray += premadeList;
+
+    // global search
+    // function renderData(filteredData) {
+    //   mailList.innerHTML = '';
+    //   createMails(filteredData);
+    //   }
+      
+    //   searchInput.addEventListener('input', function (event) {
+    //   const searchKey = event.target.value;
+    //   const filteredData = allMails.filter(item => {
+    //       return item.senderName.toLowerCase().includes(searchKey.toLowerCase())
+    //   });
+    //   console.log(filteredData);
+    //   renderData(filteredData);
+    //   });
+    
+
     // select checked/unchecked event
     select.addEventListener("click", function (el) {
       let mailCheckbox = document.querySelectorAll(
@@ -232,14 +260,6 @@ function renderEmails(partialMails) {
       });
     });
 
-    //global search
-    // searchInput.addEventListener("click", function (e) {       
-    //   searchMenu.forEach(searchMail => {
-    //     if(e.target.value === searchMenu[searchMail]) {
-    //       console.log("yay")
-    //     }
-    //   })              
-    // });
 
     // filter starred messages event
 
@@ -262,6 +282,7 @@ function renderEmails(partialMails) {
 
   spinnerDiv.style.display = "none";
 }
+
 // next & prev buttons
 prevBtn.addEventListener("click", function (event) {
   event.preventDefault();

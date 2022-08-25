@@ -245,7 +245,7 @@ button {
 }
 
 .search-menu {
-  display: none;
+  display: block;
   position: absolute;
   top: 57px;
   max-width: 700px;

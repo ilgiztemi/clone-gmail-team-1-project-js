@@ -1,26 +1,6 @@
 export const social1 = [
   {
     tags: { isStarred: false, isTrash: false, isSpam: false },
-    senderName: 'Seytech Co',
-    senderEmail: 'support@seytech.com',
-    messageTitle: 'SOCIAL! Enrollment start date',
-    isRead: false,
-    date: new Date(),
-    messages: [
-      {
-        message: 'When you would like to join us?',
-        attachments: [
-          {
-            text: 'seytech logo',
-            icon: 'https://www.seytech.co/images/logo.png',
-          },
-        ],
-        date: new Date(),
-      },
-    ],
-  },
-  {
-    tags: { isStarred: false, isTrash: false, isSpam: false },
     senderName: 'Heroku',
     senderEmail: 'heroku@heroku.com',
     messageTitle: 'Excited to announce our new feature',
